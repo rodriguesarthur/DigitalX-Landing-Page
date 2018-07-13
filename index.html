@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html ng-app="angular-page">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<link rel="shortcut icon" type="imagem/png" href="images/icon-dx.png">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="lib/angular.min.js"></script>
+		<script type="text/javascript" src="js/data-angular.js"></script>
+		<title>DigitalX Marketing</title>
+	</head>
+	<body>
+
+		<header>
+			<div id="header-large">
+				<div id="menu-top">
+				<div class="container">
+					<h1 class="float-left slide-top">DigitalX Marketing</h1>
+					<ul class="nav float-right">
+						<li class="nav-item"><a class="slide-about">A DigitalX</a></li>
+						<li class="nav-item"><a class="slide-services">Serviços</a></li>
+						<li class="nav-item"><a class="slide-customers">Clientes</a></li>
+					</ul>
+				</div>
+				</div><!-- menu-top -->
+				<div class="banner container">
+					<div class="row">
+						<div class="col-sm-6 banner-title">
+						<h1>DigitalX Marketing</h1>
+						<p>AGÊNCIA DE PUBLICIDADE 360º.</p>
+						<p>TUDO DE ACORDO COM A NECESSIDADE DA SUA EMPRESA</p>
+						</div><!-- banner-title -->
+						<div class="col-sm-6 banner-contact">
+							<div class="form-contact float-right">
+								<h2>Nós entramos em contato com você</h2>
+								<p>Preencha os dados abaixo que a DigitalX entra em contato com você.</p>
+								<p>Faça seu orçamento.</p>
+								<form name="contato" method="POST">
+									<input id="nome" type="text" class="form-control" placeholder="Nome" aria-label="nome" aria-describedby="basic-addon1">
+									<input id="email" type="email" class="form-control" placeholder="E-mail" aria-label="email" aria-describedby="basic-addon1">
+									<input id="telefone" type="text" class="form-control" placeholder="Telefone" aria-label="telefone" aria-describedby="basic-addon1">
+									<textarea id="mensagem" class="form-control" rows='4' placeholder="Mensagem" aria-label="With textarea"></textarea>
+									<input id="enviar" type="submit" name="enviar" value="ENVIAR" class="btn btn-primary btn-block" onclick="return validaform()">
+								</form>
+							</div><!-- form-contact -->
+						</div><!-- banner-contact -->
+					</div><!-- row -->
+					<i class="fas fa-angle-double-down slide-down"></i>
+				</div><!-- banner -->
+			</div><!-- header-large -->
+
+			<div class="header-mobile text-center">
+				<div id="menu-slider">
+					<ul class="nav flex-column">
+						<li class="nav-item"><a class="slide-about">A DigitalX</a></li>
+						<li class="nav-item"><a class="slide-services">Serviços</a></li>
+						<li class="nav-item"><a class="slide-customers">Clientes</a></li>
+					</ul>
+				</div><!-- menu-slider -->
+				<div class="menu-mobile fixed-top">
+					<h2 class="slide-top float-left">DigitalX Marketing</h2>
+					<i class="fas fa-bars float-right bars-open"></i>
+				</div><!-- menu-mobile -->
+				<h1>DigitalX Marketing</h1>
+				<p>AGÊNCIA DE PUBLICIDADE 360º.</p>
+				<p>TUDO DE ACORDO COM A NECESSIDADE DA SUA EMPRESA</p>
+				<a class="btn btn-primary open-contact">Fale com a DigitalX</a>
+			</div><!-- header-mobile -->
+			<div class="mask"></div>
+			<div class="contact-mobile text-center">
+				<button type="button" class="close float-right close-contact" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+				<h2>Nós entramos em contato com você</h2>
+				<p>Preencha os dados abaixo que a DigitalX entra em contato com você.</p>
+				<form name="contatomobile" method="POST">
+					<input id="nome1" type="text" class="form-control" placeholder="Nome" aria-label="nome" aria-describedby="basic-addon1">
+					<input id="email1" type="email" class="form-control" placeholder="E-mail" aria-label="email" aria-describedby="basic-addon1">
+					<input id="telefone1" type="text" class="form-control" placeholder="Telefone" aria-label="telefone" aria-describedby="basic-addon1">
+					<textarea id="mensagem1" class="form-control" rows='4' placeholder="Mensagem" aria-label="With textarea"></textarea>
+					<input id="enviar" type="submit" name="enviar" value="ENVIAR" class="btn btn-primary btn-block" onclick="return validaformmobile()">
+				</form>
+			</div>
+		</header>
+
+		<section>
+			<div class="about">
+				<div class="container text-center">
+					<h1>Sobre a DigitalX</h1>
+					<div class="row">
+						<div class="col-md-6">
+						<p>A DigitalX proporciona a seus clientes um suporte especializado, ágil e direcionado para alavancar resultados, ampliando oportunidades e negócios. Estamos preparados para fortalecer a imagem de sua empresa, com soluções estratégicas, eficientes e em consonância com as necessidades do mercado.</p>
+						</div>
+						<div class="col-md-6">
+							<img src="images/company-about.jpg">
+						</div>
+					</div><!-- row -->
+				</div><!-- container -->
+			</div><!-- about -->
+
+			<div class="services" ng-controller="servicesctrl">
+				<div class="container text-center">
+					<h1>Serviços</h1>
+					<p>Veja alguns dos serviços oferecidos pela DigitalX para ajudar sua empresa a alcançar os melhores resultados!</p>
+					<div class="row">
+						<div class="col-md-3" ng-repeat="service in services">
+							<i class="{{service.icon}}"></i>
+							<h2>{{service.title}}}</h2>
+							<p>{{service.text}}</p>
+						</div>						
+					</div><!-- row -->
+				</div><!-- container -->
+			</div><!-- services -->
+
+			<div class="certificates">
+				<div class="container text-center">
+					<h1>DigitalX Marketing</h1>
+					<h2>Empresa Certificada</h2>
+					<div class="row">
+						<div class="col-md-4">
+							<img src="images/certificado-inbound-marketing.png">
+						</div>
+						<div class="col-md-4">
+							<img src="images/certificado-rd-station.png">
+						</div>
+						<div class="col-md-4">
+							<img src="images/certificado-resultados-digitais.png">
+						</div>
+					</div>
+				</div><!-- container -->
+			</div><!-- company -->
+
+			<div class="customers">
+				<div class="container text-center">
+					<h1>Veja a opnião dos nossos clientes</h1>
+					<div class="slide-coments">
+						<div class="coments">
+							<div class="row">
+								<div class="col-md-8 order-md-2">
+									<p>"Agradeço a DigitalX pelo comprometimento, a lealdade e a transparência. Fiquei satisfeita e segura por toda a orientação e execução do trabalho!"</p>
+									<span>Sophia Petillo, Company Turismo</span>
+								</div>
+								<div class="col-md-4 order-md-1"><img src="images/customer1.jpg"></div>
+							</div>
+						</div>
+						<div class="coments">
+							<div class="row">
+								<div class="col-md-8">
+									<p>"Estou muito satisfeito com os serviços prestados, atenderam todas as minhas expectativas!"</p>
+									<span>Rodrigo Almeida, Mydas Tecnologia</span>
+								</div>
+								<div class="col-md-4"><img src="images/customer2.jpg"></div>
+							</div>
+						</div>
+						<div class="coments">
+							<div class="row">
+								<div class="col-md-8 order-md-2">
+									<p>"Além do conhecimento técnico atualizado e eficaz, a DigitalX tem um compromisso exemplar com a entrega!"</p>
+									<span>Karol Carvalho, Add Solutions</span>
+								</div>
+								<div class="col-md-4 order-md-1"><img src="images/customer3.jpg"></div>
+							</div>
+						</div>
+						<div class="coments">
+							<div class="row">
+								<div class="col-md-8">
+									<p>"Ficamos muito satisfeitos com os resultados das pesquisas da DigitalX, trazendo novas decisões para atingirmos nossos objetivos!"</p>
+									<span>Julianna Dias, GeekArt</span>
+								</div>
+								<div class="col-md-4"><img src="images/customer4.jpg"></div>
+							</div>
+						</div>
+						<i class="fas fa-angle-left" onclick="Slides(-1)"></i>
+						<i class="fas fa-angle-right" onclick="Slides(1)"></i>
+					</div><!-- slide-coments -->
+				</div><!-- container -->
+			</div><!-- customers -->
+		</section>
+
+		<footer>
+			<div class="container footer text-center">
+				<p class="float-left">Copyright © DigitalX 2018</p>
+				<ul class="nav float-right list-socials">
+					<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+					<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+					<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+					<li><a href="#" target="_blank"><i class="fab fa-pinterest-p"></i></a></li>
+				</ul>
+			</div>
+		</footer>
+
+		<script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
+		<script type="text/javascript" src="lib/jquery.maskedinput.min.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	</body>
+</html>
